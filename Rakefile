@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "nitfy"
-    gem.summary = %Q{TODO}
-    gem.email = "robl@monkeyhelper.com"
+    gem.summary = "NITF file parser"
+    gem.email = "robl at monkeyhelper.com"
     gem.homepage = "http://github.com/monkeyhelper/nitfy"
     gem.authors = ["robl"]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings

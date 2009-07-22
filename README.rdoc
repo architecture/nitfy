@@ -1,6 +1,26 @@
 = nitfy
 
-Description goes here.
+A NITF document parser (http://www.nitf.org/).
+
+= Usage
+
+ #!/usr/bin/ruby
+
+ require 'rubygems'
+ require 'nitfy'
+
+ xml_string = File.read(ARGV[0])
+ doc = Nitfy::Document.parse(xml_string, :single => true)
+
+ # Head
+ puts doc.head.metas.first.name
+ puts doc.head.keylist.keywords.first.key
+
+ # Body
+ puts doc.body.head.title
+ puts doc.body.head.headline.hl1
+ puts doc.body.content
+
 
 == Copyright
 
