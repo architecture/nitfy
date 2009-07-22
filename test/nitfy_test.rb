@@ -9,7 +9,7 @@ class NiftyInvalidDocument < Test::Unit::TestCase
     end
 
     should "have not have a header" do
-      @doc.head.nil?
+      assert @doc.head.nil?
     end
 
   end
@@ -24,11 +24,11 @@ class NitfyTest < Test::Unit::TestCase
     end
 
     should "have a header" do
-      !@doc.head.nil?
+      assert !@doc.head.nil?
     end
 
     should "have a title" do
-      @doc.head.title == 'Norfolk Weather and Tide Updates'
+      assert @doc.head.title == 'Norfolk Weather and Tide Updates'
     end
   end
 end
