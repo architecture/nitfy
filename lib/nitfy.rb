@@ -4,6 +4,15 @@ require 'pp'
 
 module Nitfy
 
+  class DocData
+    include HappyMapper
+    tag 'docdata'
+
+    has_one :issue_date, DateTime, :tag => 'date.issue/@norm'
+    has_one :release_date, DateTime, :tag => 'date.release/@norm'
+    has_one :expiry_date, DateTime, :tag => 'date.expire/@norm'
+  end
+
   class Keyword
     include HappyMapper
     tag 'keyword'
@@ -33,7 +42,8 @@ module Nitfy
     tag 'head'
 
     has_one :title, String
-    has_one :keylist, KeyList, :tag => 'key-list'
+    has_one :keylist, KeyList #, :tag => 'key-list' ??
+    has_one :docdata, DocData
 
     has_many :metas, Meta
   end
